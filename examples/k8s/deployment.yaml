@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: sslh
+  name: sslh
+  selfLink: /apis/extensions/v1beta1/namespaces/domoticz/deployments/sslh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sslh
+  template:
+    metadata:
+      labels:
+        app: sslh
+    spec:
+      containers:
+      - args:
+        - --listen=0.0.0.0:443
+        - --ssh=192.168.1.5:22
+        - --openvpn=192.168.1.17:443
+        - -f
+        - --verbose=1
+        image: imartyn/sslh:testing
+        name: sslh
