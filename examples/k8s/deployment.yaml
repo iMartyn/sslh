@@ -22,5 +22,5 @@ spec:
         - --openvpn=192.168.1.17:443
         - -f
         - --verbose=1
-        image: imartyn/sslh:testing
+        image: imartyn/sslh:debian
         name: sslh
