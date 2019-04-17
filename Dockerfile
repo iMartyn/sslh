@@ -6,4 +6,4 @@ RUN cd /build; export USELIBWRAP=; make -e install
 
 FROM alpine
 RUN apk add --nocache libconfig pcre
-COPY --from=builder /build /sslh/sslh-select /sslh
+COPY --from=builder /build/sslh-select /sslh
